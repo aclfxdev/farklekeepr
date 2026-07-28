@@ -1,2 +1,2 @@
-# farklekeepr
-Stuff relating to FarkleKeepr like privacy policy. 
+# farklekeepr support
+Support for FarkleKeepr app. 
