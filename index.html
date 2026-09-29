@@ -2,61 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FarkleKeepr Support</title>
 <style>
   :root {
     color-scheme: light dark;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-    line-height: 1.6;
-    color: #1c1c1e;
+    --ink: #1c1f1d;
+    --muted: #5b625c;
+    --line: #e3e7e3;
+    --accent: #2f7a4f;
+    --bg: #fbfaf7;
+    --card: #ffffff;
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #f2f2f7; background: #000; }
-    a { color: #0a84ff; }
-    .card { background: #1c1c1e; border-color: #2c2c2e; }
+    :root {
+      --ink: #eef1ec;
+      --muted: #9aa79c;
+      --line: #2a2f2b;
+      --accent: #5bc088;
+      --bg: #121412;
+      --card: #1a1d1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
   }
   h1 {
-    font-size: 1.9rem;
-    margin-bottom: 0.25em;
+    font-size: 34px;
+    line-height: 1.15;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
   }
   .subtitle {
-    color: #6e6e73;
-    margin-top: 0;
-    margin-bottom: 2.5em;
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0;
   }
   h2 {
-    font-size: 1.15rem;
-    margin-top: 2.2em;
+    font-size: 20px;
+    margin: 40px 0 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
   }
-  a {
-    color: #007aff;
-    text-decoration: none;
-  }
-  a:hover { text-decoration: underline; }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p { margin: 0 0 14px; color: var(--ink); }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
   .card {
-    border: 1px solid #e5e5ea;
-    border-radius: 14px;
-    padding: 20px 24px;
-    margin-top: 1em;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 0 0 14px;
   }
+  .card p:last-child { margin-bottom: 0; }
+  .faq-item { padding: 14px 0; border-top: 1px solid var(--line); }
+  .faq-item:first-child { border-top: none; padding-top: 0; }
+  .faq-item p { margin: 0; }
+  .faq-item strong { display: block; margin-bottom: 4px; }
   footer {
-    margin-top: 3.5em;
-    padding-top: 1.5em;
-    border-top: 1px solid #e5e5ea;
-    font-size: 0.9rem;
-    color: #6e6e73;
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer .sep { margin: 0 8px; }
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 18px 72px; }
+    h1 { font-size: 28px; }
   }
 </style>
 </head>
 <body>
-  <h1>FarkleKeepr Support</h1>
-  <p class="subtitle">A scorekeeper for the dice game Farkle - play with real dice, let the app handle the math.</p>
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">FarkleKeepr</span>
+    <h1>Support</h1>
+    <p class="subtitle">A scorekeeper for the dice game Farkle — play with real dice, let the app handle the math.</p>
+  </header>
 
   <h2>Contact</h2>
   <div class="card">
@@ -66,16 +115,26 @@
 
   <h2>Frequently asked</h2>
   <div class="card">
-    <p><strong>Does FarkleKeepr roll dice for me?</strong><br>
-    No - you play with your own physical dice. FarkleKeepr just tracks scores, turns, and special combinations.</p>
-    <p><strong>Can I play across multiple devices?</strong><br>
-    Yes - create a shared game and share the join code with other players, each on their own phone.</p>
-    <p><strong>What does Premium Edition unlock?</strong><br>
-    Cross-device shared games, plus additional app themes and icons.</p>
+    <div class="faq-item">
+      <strong>Does FarkleKeepr roll dice for me?</strong>
+      <p>Yes — FarkleKeepr includes an optional virtual dice roller for whenever you don't have real dice on hand. Playing with real, physical dice is encouraged though; the app is just there to track scores, turns, and special combinations either way.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I play across multiple devices?</strong>
+      <p>Yes — create a shared game and share the join code with other players, each on their own phone.</p>
+    </div>
+    <div class="faq-item">
+      <strong>What does Premium Edition unlock?</strong>
+      <p>Cross-device shared games, plus additional app themes and icons.</p>
+    </div>
   </div>
 
   <footer>
-    See also the <a href="https://privacy.farklekeepr.com">Privacy Policy</a>.
+    © 2026 FarkleKeepr. All rights reserved.
+    <span class="sep">·</span>
+    <a href="https://privacy.farklekeepr.com">Privacy Policy</a>
   </footer>
+
+</div>
 </body>
 </html>
